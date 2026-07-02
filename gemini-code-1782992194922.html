@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة هبوط - ترطيب عميق مع The Ordinary</title>
+    <style>
+        /* Modern CSS Styles */
+        :root {
+            --primary: #f1f5f9;
+            --secondary: #334155;
+            --accent: #3b82f6;
+            --white: #ffffff;
+            --font-family: 'Poppins', sans-serif; /* Link for Arabic font below */
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: var(--font-family), sans-serif;
+            background-color: var(--primary);
+            color: var(--secondary);
+            direction: rtl;
+        }
+
+        /* Faux-3D Elements & General Styling */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent);
+            color: var(--white);
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Particle Background Canvas (for modern, 3D effect) */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Hero Section with Product */
+        #hero {
+            position: relative;
+            z-index: 1;
+            padding-top: 120px;
+        }
+
+        #hero-product {
+            perspective: 1000px;
+            margin: 60px auto;
+        }
+
+        #hero-image {
+            width: 300px;
+            animation: float 4s ease-in-out infinite;
+            transform-style: preserve-3d;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        @keyframes float {
+            0% { transform: translateZ(0px) rotateX(0deg); }
+            50% { transform: translateZ(50px) rotateX(5deg); }
+            100% { transform: translateZ(0px) rotateX(0deg); }
+        }
+
+        /* Benefit Sections with Faux-3D Cards */
+        #benefits {
+            background-color: var(--white);
+            padding-top: 100px;
+        }
+
+        .benefit-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f8fafc;
+            border-radius: 20px;
+            padding: 40px;
+            width: calc(33% - 20px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        /* How to Use Section */
+        #how-to-use {
+            background-color: #f8fafc;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: right;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 15px;
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 15px;
+            background-color: var(--white);
+            transition: transform 0.2s;
+        }
+
+        .step-item:hover {
+            transform: scale(1.02);
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .step-text h4 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .step-text p {
+            margin: 5px 0 0 0;
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        /* Call to Action Section */
+        #cta-section {
+            background-color: var(--white);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .final-cta {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: var(--accent);
+            padding: 20px 60px;
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .final-cta:hover {
+            transform: scale(1.05);
+        }
+
+        .final-cta span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.1);
+            filter: blur(10px);
+            z-index: -1;
+            transform: translateY(10px) scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Media Queries for Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .benefit-cards .card { width: 100%; }
+            .step-item { flex-direction: column; text-align: center; }
+            .step-number { margin-bottom: 10px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="container">
+        <!-- Minimal header, can add title if needed -->
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>ترطيب عميق وبشرة ممتلئة وناعمة</h1>
+            <p>اكتشفي قوة حمض الهيالورونيك 2% + B5 من <span style="font-weight: 600;">The Ordinary</span>. فرمولة كلينيكية متطورة لترطيب متعدد الطبقات يعيد لبشرتك حيويتها ونضارتها.</p>
+            <div id="hero-product">
+                <img src="the-ordinary-hyaluronic-acid-2-b5_769915233490_DarBeauty.webp" alt="حمض الهيالورونيك 2% + B5 من The Ordinary" id="hero-image">
+            </div>
+            <a href="#" class="cta-button">احصلي عليه الآن بسعر خاص</a>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <div class="container">
+            <h2>أهم الفوائد لبشرتك</h2>
+            <div class="benefit-cards">
+                <div class="card">
+                    <h3>ترطيب فائق ومتعدد المستويات</h3>
+                    <p>يجمع بين ثلاثة أوزان جزيئية من حمض الهيالورونيك للتغلغل في طبقات الجلد المختلفة وترطيبها من الداخل للخارج.</p>
+                </div>
+                <div class="card">
+                    <h3>بشرة ناعمة وممتلئة</h3>
+                    <p>يساعد على استعادة حجم البشرة وامتلائها، مما يقلل من مظهر الخطوط الدقيقة والجفاف لتبدو أكثر شبابًا وحيوية.</p>
+                </div>
+                <div class="card">
+                    <h3>دعم مع برو فيتامين B5</h3>
+                    <p>يعمل فيتامين B5 على تهدئة البشرة وتعزيز قدرتها على الاحتفاظ بالرطوبة لضمان ترطيب يدوم طوال اليوم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-use">
+        <div class="container">
+            <h2>طريقة الاستخدام لنتائج مثالية</h2>
+            <p>خطوات بسيطة يومية لتستمتعي ببشرة رطبة وممتلئة.</p>
+            <div class="steps">
+                <div class="step-item">
+                    <span class="step-number">01</span>
+                    <div class="step-text">
+                        <h4>نظّفي بشرتك جيدًا</h4>
+                        <p>ابدأي بتنظيف وجهك من الشوائب والمكياج كالمعتاد.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">02</span>
+                    <div class="step-text">
+                        <h4>ضعي قطرات معدودة</h4>
+                        <p>ضعي قطرات قليلة من السيروم على وجهكِ و دلكيه بلطف.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">03</span>
+                    <div class="step-text">
+                        <h4>استخدمي كريم الترطيب</h4>
+                        <p>بعد امتصاص السيروم، ضعي كريمك المعتاد لضمان ترطيب مكثف.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section">
+        <div class="container">
+            <h2>لا تفوت الفرصة!</h2>
+            <p>ابدأي رحلة ترطيب بشرتك العميقة اليوم واحصلي على السعر الخاص.</p>
+            <a href="#" class="final-cta">اطلبي الآن</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 The Ordinary. جميع الحقوق محفوظة.</p>
+            <p> Clinical Formulations with Integrity.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Particle Background JS (Creating a modern, 3D effect)
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = 80;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 5) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 2) - 1;
+                let directionY = (Math.random() * 2) - 1;
+                let color = 'rgba(59, 130, 246, 0.5)';
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
