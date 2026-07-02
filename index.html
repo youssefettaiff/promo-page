@@ -3,1127 +3,926 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ordinary Hyaluronic Acid 2% + B5 | ترطيب عميق لبشرتك</title>
-    
-    <!-- Google Fonts - Tajawal -->
+    <title>The Ordinary Hyaluronic Acid 2% + B5 - ترطيب عميق لبشرة نضرة</title>
+    <!-- Google Fonts: Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
-        /* --- CSS Reset & Variables --- */
+        /* تعريف المتغيرات لتسهيل تعديل الألوان */
         :root {
-            --primary: #1A2530;
-            --accent: #2B6CB0;
-            --accent-hover: #2C5282;
-            --cta-color: #27AE60;
-            --cta-hover: #219653;
-            --bg-light: #F7FAFC;
-            --text-dark: #2D3748;
-            --text-muted: #718096;
-            --border-color: #E2E8F0;
-            --glass-bg: rgba(255, 255, 255, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.4);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-3d: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --primary-color: #0e7490; /* لون أزرق سماوي/تركوازي للموثوقية */
+            --secondary-color: #f0f2f5; /* خلفية رمادية فاتحة ونظيفة */
+            --text-color: #333; /* لون نص أساسي داكن */
+            --light-text-color: #666; /* لون نص ثانوي أفتح */
+            --white-color: #ffffff;
+            --border-color: rgba(255, 255, 255, 0.2); /* لون حدود تأثير الزجاج */
+            --shadow-light: rgba(0, 0, 0, 0.05); /* ظل خفيف */
+            --shadow-medium: rgba(0, 0, 0, 0.1); /* ظل متوسط */
+            --star-color: #FFD700; /* لون ذهبي للنجوم */
+            --primary-color-rgb: 14, 116, 144; /* قيمة RGB للون الأساسي لاستخدامها في rgba() */
         }
 
+        /* إعادة تعيين الأنماط الأساسية */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+        }
+
+        /* سلوك التمرير الناعم */
+        html {
             scroll-behavior: smooth;
         }
 
+        /* الأنماط الأساسية للجسم والخطوط */
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl; /* اتجاه من اليمين لليسار */
+            background-color: var(--secondary-color);
+            color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
-            padding-bottom: 70px; /* Space for sticky button */
+            overflow-x: hidden; /* منع التمرير الأفقي بسبب تأثيرات الظهور */
         }
 
-        /* --- Scroll Reveal Animations --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- General Utilities --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--cta-color), var(--cta-hover));
-            color: white;
+        /* الخطوط الرئيسية */
+        h1, h2, h3 {
             font-weight: 700;
-            font-size: 1.2rem;
-            padding: 16px 32px;
-            border-radius: 50px;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.2rem; /* حجم الخط للهواتف */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem; /* حجم الخط للهواتف */
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
             text-decoration: none;
-            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+            color: var(--primary-color);
+        }
+
+        /* حاوية المحتوى الرئيسية */
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* تأثير Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px var(--shadow-light);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* الأزرار */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            text-align: center;
-            width: 100%;
         }
 
-        .btn-primary:hover {
+        .btn:hover {
+            background-color: #0c5f73; /* لون أغمق عند التمرير */
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(39, 174, 96, 0.4);
+            box-shadow: 0 6px 12px var(--shadow-medium);
         }
 
-        .btn-primary i {
-            margin-left: 10px;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            padding: 60px 0 40px;
-            background: radial-gradient(circle at top right, #EBF8FF 0%, #F7FAFC 70%);
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1.1fr 0.9fr;
-            }
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        .badge-discount {
-            display: inline-block;
-            background: #FEB2B2;
-            color: #9B2C2C;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .hero-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1.3;
-            margin-bottom: 15px;
-        }
-
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-
-        .stars-rating {
-            color: #F6AD55;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .stars-rating span {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-right: 8px;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
-
-        .hero-price {
-            display: flex;
-            align-items: baseline;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .current-price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--cta-color);
-        }
-
-        .old-price {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            text-decoration: line-through;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
+        /* تقييم النجوم */
+        .star-rating {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 1rem;
+            color: var(--star-color);
+            font-size: 1.2rem;
+        }
+        .star-rating .stars {
+            margin-left: 0.5rem;
+        }
+        .star-rating i {
+            margin: 0 0.1rem;
+        }
+        .star-rating span {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            font-weight: 400;
         }
 
-        .hero-image-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 280px;
-            height: 280px;
-            background: linear-gradient(135deg, #BEE3F8, #E2E8F0);
-            border-radius: 50%;
-            z-index: 1;
-            filter: blur(30px);
-            opacity: 0.7;
+        /* قسم البطل (Hero Section) */
+        .hero {
+            background-color: var(--white-color);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 20px var(--shadow-light);
         }
 
-        .hero-img {
-            max-width: 85%;
+        .hero h1 {
+            color: var(--text-color);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--light-text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-image {
+            max-width: 250px; /* حجم الصورة على الجوال */
+            width: 80%;
             height: auto;
-            z-index: 2;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
             transition: transform 0.5s ease;
         }
-
-        .hero-img:hover {
-            transform: scale(1.03) rotate(-2deg);
+        .hero-image:hover {
+            transform: scale(1.03);
         }
 
-        /* --- Trust Badges Bar --- */
-        .trust-bar {
-            background: white;
-            padding: 25px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+        /* شريط الثقة (Trust Badges) */
+        .trust-badges {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* للسماح بالتفاف العناصر على الشاشات الصغيرة */
+            padding: 1rem 0;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            font-size: 0.9rem;
             text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
         }
-
-        .trust-item {
+        .trust-badge {
+            flex: 1 1 30%; /* السماح بثلاثة عناصر في الصف مع التفاف */
+            padding: 0.8rem 0.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-        }
-
-        @media (min-width: 768px) {
-            .trust-item {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-
-        .trust-icon {
-            width: 50px;
-            height: 50px;
-            background: #EBF8FF;
-            color: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            transition: transform 0.3s ease;
         }
-
-        .trust-text h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--primary);
+        .trust-badge:hover {
+            transform: translateY(-5px);
         }
-
-        .trust-text p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* --- Urgency & Scarcity Section --- */
-        .urgency-section {
-            padding: 40px 0;
-            background: linear-gradient(135deg, #FFF5F5, #FED7D7);
-            margin: 40px 0;
-        }
-
-        .urgency-box {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-            box-shadow: var(--shadow);
-        }
-
-        .urgency-title {
-            color: #C53030;
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            direction: ltr;
-        }
-
-        .time-box {
-            background: var(--primary);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            min-width: 70px;
-        }
-
-        .time-box span {
-            display: block;
+        .trust-badge i {
             font-size: 1.8rem;
-            font-weight: 800;
-            line-height: 1;
+            margin-bottom: 0.5rem;
+            color: #a4e0ff; /* لون أزرق أفتح للأيقونات */
+        }
+        .trust-badge span {
+            font-weight: 400;
         }
 
-        .time-box small {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: #A0AEC0;
-        }
-
-        .stock-progress {
-            background: #E2E8F0;
-            height: 12px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 10px;
-            position: relative;
-        }
-
-        .stock-bar {
-            background: linear-gradient(90deg, #E53E3E, #DD6B20);
-            width: 15%; /* Reflects low stock */
-            height: 100%;
-            border-radius: 10px;
-            animation: strip 2s linear infinite;
-        }
-
-        .stock-text {
-            font-weight: 700;
-            color: #C53030;
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
-
-        /* --- Benefits Section (3D Hover) --- */
-        .benefits {
-            padding: 60px 0;
-        }
-
+        /* قسم الفوائد (Benefits Section) */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 1.5rem;
+            grid-template-columns: 1fr; /* عمود واحد للجوال */
         }
 
         .benefit-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 35px 25px;
             text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.4s ease;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            background-color: var(--white-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px; /* لتمكين تأثير 3D */
         }
-
         .benefit-card:hover {
-            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-            box-shadow: var(--shadow-3d);
-            border-color: var(--accent);
+            transform: translateY(-8px) rotateX(5deg); /* تأثير 3D خفيف */
+            box-shadow: 0 12px 25px var(--shadow-medium);
         }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background: #EBF8FF;
-            color: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 20px;
-            transition: transform 0.4s ease;
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
-
-        .benefit-card:hover .benefit-icon {
-            transform: scale(1.1);
-            background: var(--accent);
-            color: white;
-        }
-
         .benefit-card h3 {
             font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
         }
-
         .benefit-card p {
-            color: var(--text-muted);
             font-size: 0.95rem;
+            color: var(--light-text-color);
         }
 
-        /* --- How to Use Section --- */
-        .how-to-use {
-            padding: 60px 0;
-            background: white;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        /* قسم طريقة الاستخدام (How to Use Section) */
+        .how-to-use-steps {
+            display: flex;
+            flex-direction: column; /* عمودي للجوال */
+            gap: 2rem;
         }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            position: relative;
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
         }
-
-        .step-card {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
+        .step-icon {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            margin: 0 auto 15px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-        .step-card h3 {
+        .step-content h3 {
             font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--light-text-color);
         }
 
-        .step-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- Social Proof / Reviews --- */
-        .reviews {
-            padding: 60px 0;
-        }
-
+        /* قسم تقييمات العملاء (Reviews Section) */
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 1.5rem;
+            grid-template-columns: 1fr; /* عمود واحد للجوال */
         }
-
         .review-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            background-color: var(--white-color);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .review-header {
-            display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            text-align: center;
         }
-
-        .avatar {
-            width: 50px;
-            height: 50px;
+        .review-card .avatar {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            background: #CBD5E0;
+            background-color: var(--secondary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .avatar-1 { background: #E53E3E; }
-        .avatar-2 { background: #319795; }
-        .avatar-3 { background: #805AD5; }
-
-        .reviewer-info h4 {
-            font-size: 1.05rem;
-            color: var(--primary);
-        }
-
-        .reviewer-info span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .review-stars {
-            color: #F6AD55;
-            margin-bottom: 15px;
-        }
-
-        .review-text {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            font-style: italic;
-            line-height: 1.7;
-        }
-
-        .verified-badge {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--cta-color);
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-top: 15px;
-        }
-
-        /* --- FAQ Section --- */
-        .faq {
-            padding: 60px 0;
-            background: white;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
             overflow: hidden;
-            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        .review-card .avatar i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        .review-card .reviewer-name {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .review-card .review-stars {
+            color: var(--star-color);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        .review-card .review-text {
+            font-size: 0.95rem;
+            color: var(--light-text-color);
+            font-style: italic;
         }
 
-        .faq-item.active {
-            border-color: var(--accent);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* قسم الندرة والاستعجال (Urgency & Scarcity) */
+        .urgency-scarcity {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0a87a0 100%);
+            color: var(--white-color);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .urgency-scarcity h2 {
+            color: var(--white-color);
+            margin-bottom: 1rem;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .countdown-item span:last-child {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 0.3rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .stock-indicator {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
+        /* قسم الأسئلة الشائعة (FAQ Section) */
+        .faq-item {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
         .faq-question {
-            padding: 20px;
-            background: #F7FAFC;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
+            padding: 1rem 1.5rem;
             font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
+            color: var(--text-color);
+            transition: background-color 0.3s ease;
         }
-
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
         .faq-question i {
             transition: transform 0.3s ease;
-            color: var(--accent);
         }
-
-        .faq-item.active .faq-question i {
+        .faq-question.active i {
             transform: rotate(180deg);
         }
-
         .faq-answer {
-            max-height: 0;
+            padding: 0 1.5rem;
+            max-height: 0; /* لإخفاء الإجابة */
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: white;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: var(--light-text-color);
         }
-
         .faq-answer p {
-            padding: 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            border-top: 1px solid var(--border-color);
+            padding: 1rem 0;
+            margin: 0;
+            border-top: 1px solid #eee; /* فاصل بصري للإجابة */
+        }
+        .faq-answer.active {
+            max-height: 200px; /* لتظهر الإجابة، يمكن تعديلها حسب الحاجة */
+            padding-bottom: 1.5rem;
         }
 
-        /* --- Checkout Section (Form) --- */
-        .checkout {
-            padding: 60px 0 80px;
-            background: linear-gradient(135deg, #EBF8FF, #F7FAFC);
-        }
-
-        .checkout-card {
-            background: white;
-            border-radius: 25px;
-            padding: 40px 30px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: var(--shadow-3d);
-            border: 2px solid var(--accent);
-        }
-
-        .checkout-header {
+        /* نموذج الطلب (Checkout Form) */
+        .checkout-form {
             text-align: center;
-            margin-bottom: 30px;
         }
-
-        .checkout-header h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 10px;
+        .checkout-form .form-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow-light);
+            padding: 2rem;
+            max-width: 500px; /* عرض أقصى للنموذج */
+            margin: 0 auto;
         }
-
-        .checkout-header p {
-            color: var(--text-muted);
+        .checkout-form h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
         }
-
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.2rem;
+            text-align: right;
         }
-
-        .form-label {
+        .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--text-color);
         }
-
-        .form-input {
+        .form-group input {
             width: 100%;
-            padding: 15px;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            background-color: var(--white-color);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input:focus {
             outline: none;
-            background: #F8FAFC;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+        }
+        .checkout-form .btn {
+            width: 100%;
+            margin-top: 1rem;
         }
 
-        .form-input:focus {
-            border-color: var(--accent);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
-        }
-
-        .form-summary {
-            background: #EDF2F7;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-        }
-
-        .form-summary span:last-child {
-            color: var(--cta-color);
-            font-size: 1.3rem;
-        }
-
-        /* --- Sticky CTA Button --- */
+        /* زر الشراء العائم (Sticky CTA Button) */
         .sticky-cta {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s ease;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .sticky-cta:hover {
+            background-color: #0c5f73;
         }
 
-        .sticky-cta .btn-primary {
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            max-width: 400px;
+        /* تأثيرات الظهور عند التمرير (Scroll Reveal Animations) */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 480px) {
-            .hero-title { font-size: 1.8rem; }
-            .current-price { font-size: 1.8rem; }
-            .time-box span { font-size: 1.4rem; }
-            .time-box { min-width: 55px; padding: 8px; }
-            .checkout-card { padding: 25px 15px; }
+        /* تصميم متجاوب (Mobile-First) */
+        /* الشاشات اللوحية وما فوق */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            .hero-image {
+                max-width: 300px;
+            }
+            .trust-badges {
+                flex-wrap: nowrap; /* لا تلتف على سطر واحد */
+                justify-content: center;
+                gap: 2rem;
+                padding: 1.5rem 0;
+            }
+            .trust-badge {
+                flex: none; /* لا يوجد نمو مرن */
+                width: auto;
+            }
+            .benefits-grid, .reviews-grid {
+                grid-template-columns: repeat(2, 1fr); /* عمودين للأجهزة اللوحية */
+            }
+            .how-to-use-steps {
+                flex-direction: row; /* تخطيط أفقي للأجهزة اللوحية */
+                justify-content: center;
+            }
+            .step {
+                flex-direction: column; /* الأيقونة فوق النص */
+                text-align: center;
+                align-items: center;
+                flex: 1; /* توزيع متساوٍ للمساحة */
+            }
+            .step-icon {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* شاشات الكمبيوتر المكتبية وما فوق */
+        @media (min-width: 992px) {
+            .container {
+                max-width: 1100px;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            h2 {
+                font-size: 2.8rem;
+            }
+            .hero-image {
+                max-width: 350px;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr); /* ثلاثة أعمدة لأجهزة الكمبيوتر */
+            }
+            .how-to-use-steps {
+                gap: 3rem;
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr); /* ثلاثة أعمدة لأجهزة الكمبيوتر */
+            }
+            .checkout-form .form-card {
+                padding: 3rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content reveal">
-                <div class="badge-discount">🔥 خصم حصري 30% لفترة محدودة</div>
-                <h1 class="hero-title">سر البشرة المفعمة بالترطيب والنضارة الفورية</h1>
-                
-                <div class="stars-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span>(4.9/5 من طرف +1,200 عميلة في المغرب)</span>
-                </div>
-
-                <p class="hero-desc">
-                    سيروم <strong>The Ordinary Hyaluronic Acid 2% + B5</strong> الأصلي. تركيبة متطورة تجمع بين حمض الهيالورونيك بـ 3 أحجام جزيئية وفيتامين B5 لتغلغل عميق، ترطيب فائق يدوم 24 ساعة، وملء الخطوط الرفيعة من الأسبوع الأول للاستخدام.
-                </p>
-
-                <div class="hero-price">
-                    <span class="current-price">199 درهم</span>
-                    <span class="old-price">285 درهم</span>
-                </div>
-
-                <a href="#order-form" class="btn-primary">
-                    <i class="fa-solid fa-cart-shopping"></i> اطلبي الآن بخصم 30% - الدفع عند الاستلام
-                </a>
-            </div>
-
-            <div class="hero-image-wrapper reveal">
-                <!-- Using the exact image URL specified in prompt -->
-                <img src="the-ordinary-hyaluronic-acid-2-b5_769915233490_DarBeauty.webp" alt="The Ordinary Hyaluronic Acid 2% + B5 Serum" class="hero-img">
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Badges Bar -->
-    <section class="trust-bar">
-        <div class="container trust-grid">
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <div class="trust-text">
-                    <h4>شحن مجاني وسريع</h4>
-                    <p>توصيل لجميع المدن خلال 24-48 ساعة</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                <div class="trust-text">
-                    <h4>الدفع عند الاستلام</h4>
-                    <p>لا تدفعي أي شيء حتى تتوصلين بطلبك</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="trust-text">
-                    <h4>منتج أصلي 100%</h4>
-                    <p>مضمون ومستورد مباشرة من كندا</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Urgency & Scarcity Section -->
-    <section class="urgency-section reveal">
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section class="hero scroll-reveal">
         <div class="container">
-            <div class="urgency-box">
-                <h3 class="urgency-title"><i class="fa-solid fa-stopwatch"></i> ينتهي هذا العرض الحصري بعد:</h3>
-                <div class="countdown" id="countdown">
-                    <div class="time-box"><span id="hours">01</span><small>ساعات</small></div>
-                    <div class="time-box"><span id="minutes">59</span><small>دقائق</small></div>
-                    <div class="time-box"><span id="seconds">59</span><small>ثواني</small></div>
-                </div>
-                <div class="stock-progress">
-                    <div class="stock-bar"></div>
-                </div>
-                <p class="stock-text"><i class="fa-solid fa-fire"></i> تنبيه: المخزون المتبقي 12 عبوة فقط بهذا السعر!</p>
+            <h1>سيروم حمض الهيالورونيك 2% + B5 من The Ordinary</h1>
+            <p class="subtitle">ترطيب عميق يدوم طويلاً لبشرة نضرة وممتلئة</p>
+            <div class="star-rating">
+                <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+                <span>(أكثر من 2500 مراجعة إيجابية)</span>
             </div>
+            <!-- يجب استخدام هذا الرابط بالضبط للصورة -->
+            <img src="https://cdn.shopify.com/s/files/1/0681/1574/6179/products/the-ordinary-hyaluronic-acid-2-b5_769915233490_DarBeauty.webp?v=1708894177" alt="The Ordinary Hyaluronic Acid 2% + B5 Serum" class="hero-image">
+            <a href="#checkout-form" class="btn">اطلبي الآن بخصم 30%</a>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits container">
-        <h2 class="section-title reveal">لماذا يحتاج وجهك لهذا السيروم؟</h2>
-        <p class="section-subtitle reveal">تركيبة علمية مثبتة سريرياً لإعادة الشباب والحيوية لبشرتك</p>
+    <!-- شريط الثقة (Trust Badges) -->
+    <section class="trust-badges scroll-reveal">
+        <div class="trust-badge">
+            <i class="fas fa-truck"></i>
+            <span>شحن مجاني وسريع</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-handshake"></i>
+            <span>دفع عند الاستلام</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>منتج أصلي 100%</span>
+        </div>
+    </section>
 
+    <!-- قسم الفوائد والمكونات (Benefits Section) -->
+    <section class="benefits container scroll-reveal">
+        <h2 class="glass-card">لماذا تحتاج بشرتك إلى سيروم الهيالورونيك؟</h2>
         <div class="benefits-grid">
-            <div class="benefit-card reveal">
-                <div class="benefit-icon"><i class="fa-solid fa-droplet"></i></div>
-                <h3>ترطيب عميق ومتعدد الطبقات</h3>
-                <p>يحتوي على 3 أوزان جزيئية من حمض الهيالورونيك (منخفض، متوسط، مرتفع) لضمان وصول الترطيب لأعمق طبقات الجلد وليس فقط السطح.</p>
+            <div class="benefit-card glass-card">
+                <i class="fas fa-water"></i>
+                <h3>ترطيب عميق فوري</h3>
+                <p>يغمر البشرة بالرطوبة الفائقة من الأعماق، لتبدو أكثر امتلاءً ونضارة.</p>
             </div>
-
-            <div class="benefit-card reveal">
-                <div class="benefit-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <h3>ملء التجاعيد والخطوط الرفيعة</h3>
-                <p>يعمل على شد البشرة ومنحها مظهراً ممتلئاً (Plumping Effect)، مما يخفي علامات التعب والتقدم في السن بشكل ملحوظ وسريع.</p>
+            <div class="benefit-card glass-card">
+                <i class="fas fa-leaf"></i>
+                <h3>يعزز مرونة البشرة</h3>
+                <p>يساعد في تحسين ليونة ومرونة البشرة، مما يقلل من ظهور الخطوط الدقيقة والتجاعيد.</p>
             </div>
-
-            <div class="benefit-card reveal">
-                <div class="benefit-icon"><i class="fa-solid fa-shield-virus"></i></div>
-                <h3>دعم وحماية حاجز البشرة</h3>
-                <p>معزز بفيتامين B5 (الباثينول) الذي يساعد على ترميم حاجز البشرة الطبيعي، تهدئة الالتهابات، وحبس الرطوبة لفترات طويلة.</p>
+            <div class="benefit-card glass-card">
+                <i class="fas fa-sun"></i>
+                <h3>يحمي حاجز البشرة</h3>
+                <p>يقوي الحاجز الواقي للبشرة ويحميها من العوامل البيئية الضارة.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- How to Use Section -->
-    <section class="how-to-use">
-        <div class="container">
-            <h2 class="section-title reveal">طريقة الاستخدام الصحيحة</h2>
-            <p class="section-subtitle reveal">3 خطوات بسيطة الروتينك اليومي للحصول على أفضل النتائج</p>
-
-            <div class="steps-grid">
-                <div class="step-card reveal">
-                    <div class="step-number">1</div>
-                    <h3>تنظيف وترطيب الوجه</h3>
-                    <p>اغسلي وجهك بالغسول المناسب، والأهم: اتركي بشرتك مبللة قليلاً بالماء (غير جافة تماماً) لأن الهيالورونيك يحتاج لرطوبة ليمتصها.</p>
-                </div>
-
-                <div class="step-card reveal">
-                    <div class="step-number">2</div>
-                    <h3>تطبيق بضع قطرات</h3>
-                    <p>ضعي 3 إلى 4 قطرات من السيروم على وجهك ورقبتك صباحاً ومساءً، وقومي بتوزيعه بحركات ربط لطيفة حتى يتم امتصاصه.</p>
-                </div>
-
-                <div class="step-card reveal">
-                    <div class="step-number">3</div>
-                    <h3>قفل الترطيب بالكريم</h3>
-                    <p>بعد دقيقة من وضع السيروم، ضعي كريم الترطيب المعتاد (Moisturizer) لقفل الرطوبة داخل خلايا البشرة وحمايتها.</p>
-                </div>
+            <div class="benefit-card glass-card">
+                <i class="fas fa-magic"></i>
+                <h3>مكونات فعالة</h3>
+                <p>بتركيبة غنية بحمض الهيالورونيك وفيتامين B5 والسيراميدات لنتائج مبهرة.</p>
+            </div>
+            <div class="benefit-card glass-card">
+                <i class="fas fa-tint"></i>
+                <h3>ملمس غير دهني</h3>
+                <p>يمتصه الجلد بسرعة دون ترك أي بقايا دهنية أو لزجة.</p>
+            </div>
+            <div class="benefit-card glass-card">
+                <i class="fas fa-smile"></i>
+                <h3>مناسب لجميع أنواع البشرة</h3>
+                <p>تركيبة لطيفة وآمنة، حتى للبشرة الحساسة والمعرضة لحب الشباب.</p>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof / Reviews -->
-    <section class="reviews container">
-        <h2 class="section-title reveal">تجارب عميلاتنا في المغرب</h2>
-        <p class="section-subtitle reveal">نتائج حقيقية لنساء استخدمن سيروم The Ordinary الأصلي</p>
+    <!-- دليل الاستخدام (How to Use Section) -->
+    <section class="how-to-use container scroll-reveal">
+        <h2 class="glass-card">طريقة الاستخدام لتحقيق أفضل النتائج</h2>
+        <div class="how-to-use-steps">
+            <div class="step glass-card">
+                <div class="step-icon"><i class="fas fa-hands-wash"></i></div>
+                <div class="step-content">
+                    <h3>الخطوة 1: تنظيف البشرة</h3>
+                    <p>بعد تنظيف بشرتك جيدًا وتجفيفها، تأكدي أنها نظيفة تمامًا.</p>
+                </div>
+            </div>
+            <div class="step glass-card">
+                <div class="step-icon"><i class="fas fa-droplet"></i></div>
+                <div class="step-content">
+                    <h3>الخطوة 2: تطبيق السيروم</h3>
+                    <p>ضعي بضع قطرات (2-3) على وجهك ورقبتك ودلكي بلطف حتى يمتص.</p>
+                </div>
+            </div>
+            <div class="step glass-card">
+                <div class="step-icon"><i class="fas fa-layer-group"></i></div>
+                <div class="step-content">
+                    <h3>الخطوة 3: اتبعي بالمرطب</h3>
+                    <p>استخدميه صباحاً ومساءً قبل أي زيوت أو كريمات مرطبة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- الندرة والاستعجال (Urgency & Scarcity Section) -->
+    <section class="urgency-scarcity container scroll-reveal">
+        <h2>اغتنمي الفرصة الآن! العرض سينتهي قريباً</h2>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span id="countdown-hours">00</span>
+                <span>ساعة</span>
+            </div>
+            <div class="countdown-item">
+                <span id="countdown-minutes">00</span>
+                <span>دقيقة</span>
+            </div>
+            <div class="countdown-item">
+                <span id="countdown-seconds">00</span>
+                <span>ثانية</span>
+            </div>
+        </div>
+        <div class="stock-indicator">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>المخزون المتبقي: <span id="stock-count">12</span> عبوة فقط!</span>
+        </div>
+        <a href="#checkout-form" class="btn" style="margin-top: 2rem;">اطلبي السيروم الآن قبل نفاذ الكمية</a>
+    </section>
+
+    <!-- قسم التقييمات (Social Proof/Reviews) -->
+    <section class="reviews container scroll-reveal">
+        <h2 class="glass-card">ماذا تقول عميلاتنا السعيدات؟</h2>
         <div class="reviews-grid">
-            <div class="review-card reveal">
-                <div>
-                    <div class="review-header">
-                        <div class="avatar avatar-1">س</div>
-                        <div class="reviewer-info">
-                            <h4>سارة بنسودة</h4>
-                            <span>الدار البيضاء</span>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"منتج رائع بزاف! بشرتي كانت جافة ومقشرة، من الأسبوع الأول ديال الاستعمال حسيت بفرق كبير. ولات رطبة ومشرقة ومجبدة. التوصيل كان سريع في كازا والتعامل جد احترافي."</p>
+            <div class="review-card glass-card">
+                <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                <div class="reviewer-name">فاطمة الزهراء، الدار البيضاء</div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> مشترية مؤكدة</div>
+                <p class="review-text">"بشرتي أصبحت أكثر إشراقاً ونعومة، الترطيب اللي بيوفره هذا السيروم خيالي! ما بستغني عنه أبداً."</p>
             </div>
-
-            <div class="review-card reveal">
-                <div>
-                    <div class="review-header">
-                        <div class="avatar avatar-2">ف</div>
-                        <div class="reviewer-info">
-                            <h4>فاطمة الزهراء العلوي</h4>
-                            <span>الرباط</span>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"كنت خايفة نشريه ويكون مزور حيت كينين بزاف ديال الكوبي، ولكن الحمد لله هذا الأصلي 100% (تأكدت من الباركود والتكستور). النتيجة كتحمق، الخطوط لي تحت عيني نقصو بزاف."</p>
+            <div class="review-card glass-card">
+                <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                <div class="reviewer-name">مريم، الرباط</div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> مشترية مؤكدة</div>
+                <p class="review-text">"الخطوط الدقيقة حوالين عيوني بدأت تختفي بشكل ملحوظ، وحسيت بشرتي امتصت المنتج بسرعة بدون أي لزوجة."</p>
             </div>
-
-            <div class="review-card reveal">
-                <div>
-                    <div class="review-header">
-                        <div class="avatar avatar-3">م</div>
-                        <div class="reviewer-info">
-                            <h4>مريم الناصري</h4>
-                            <span>مراكش</span>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"أحسن سيروم جربتو لترطيب الوجه بدون منازع. كيشربو الجلد دغيا ومكيخليش أثر دهني. شكراً لكم على الشحن المجاني، وصلني لباب الدار ومخلصت حتى راقبت المنتوج ديالي."</p>
+            <div class="review-card glass-card">
+                <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                <div class="reviewer-name">حنان، مراكش</div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> مشترية مؤكدة</div>
+                <p class="review-text">"صراحة من أفضل السيرومات اللي جربتها، أعطى بشرتي لمعان طبيعي وخلاها تبان أصغر وأكثر صحة."</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title reveal">الأسئلة الشائعة</h2>
-            <p class="section-subtitle reveal">كل ما تحتاجين معرفته حول الطلب والمنتج</p>
-
-            <div class="faq-list">
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <span>كيف تتم عملية الدفع واستلام الطلب؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>نحن نعتمد نظام "الدفع عند الاستلام" (Cash on Delivery) لضمان راحتك وأمانك. لا تدفعي أي مبلغ مسبقاً؛ بعد تعبئة نموذج الطلب، سيتصل بك فريقنا لتأكيد العنوان، وسيجلب لك الموزع الطلب حتى باب منزلك، حينها فقط تدفعين ثمن المنتج.</p>
-                    </div>
+    <!-- الأسئلة الشائعة (FAQ Section) -->
+    <section class="faq container scroll-reveal">
+        <h2 class="glass-card">أسئلة شائعة</h2>
+        <div class="faq-accordion">
+            <div class="faq-item glass-card">
+                <div class="faq-question">
+                    <h3>هل الدفع عند الاستلام متاح في جميع المدن؟</h3>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <span>كم يستغرق التوصيل إلى مدينتي؟ ومن يدفع مصاريف الشحن؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>التوصيل سريع ويستغرق عادة ما بين 24 إلى 48 ساعة لجميع المدن المغربية الكبرى، وقد يستغرق 72 ساعة للمناطق البعيدة. أما بالنسبة لمصاريف الشحن، فهي مجانية 100% لفترة محدودة ضمن هذا العرض.</p>
-                    </div>
+                <div class="faq-answer">
+                    <p>نعم، خدمة الدفع عند الاستلام متوفرة في جميع المدن المغربية لضمان راحتك وأمانك.</p>
                 </div>
-
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <span>هل المنتج أصلي؟ وكيف يمكنني التأكد من ذلك؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>نعم، نضمن لك أن جميع منتجاتنا أصلية 100% ومستوردة مباشرة من الموزعين المعتمدين لعلامة The Ordinary (كندا). يمكنك فحص العبوة والرمز الشريطي (Barcode) وقوام المنتج عند الاستلام قبل دفع أي شيء للموزع.</p>
-                    </div>
+            </div>
+            <div class="faq-item glass-card">
+                <div class="faq-question">
+                    <h3>كم يستغرق التوصيل؟</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>عادة ما يستغرق التوصيل من 2 إلى 5 أيام عمل، حسب مدينتك. سيتم التواصل معك لتأكيد موعد التوصيل.</p>
+                </div>
+            </div>
+            <div class="faq-item glass-card">
+                <div class="faq-question">
+                    <h3>هل المنتج أصلي؟</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نحن نضمن أن جميع منتجاتنا أصلية 100% ويتم استيرادها مباشرة من المصدر الرسمي لـ The Ordinary.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Checkout Form Section -->
-    <section class="checkout" id="order-form">
-        <div class="container">
-            <div class="checkout-card reveal">
-                <div class="checkout-header">
-                    <h3>أدخلي معلوماتك للطلب الآن</h3>
-                    <p>استفيدي من الخصم 30% + الشحن المجاني (الدفع عند الاستلام)</p>
+    <!-- نموذج الطلب (Checkout Form) -->
+    <section id="checkout-form" class="checkout-form container scroll-reveal">
+        <div class="form-card glass-card">
+            <h2>أكملي طلبك الآن واستفيدي من الخصم!</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-
-                <form id="whatsappForm" onsubmit="sendToWhatsapp(event)">
-                    <div class="form-group">
-                        <label class="form-label" for="fullName"><i class="fa-solid fa-user"></i> الاسم الكامل *</label>
-                        <input type="text" id="fullName" class="form-input" placeholder="مثال: سارة العلوي" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="phone"><i class="fa-solid fa-phone"></i> رقم الهاتف *</label>
-                        <input type="tel" id="phone" class="form-input" placeholder="مثال: 0612345678" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="city"><i class="fa-solid fa-location-dot"></i> المدينة *</label>
-                        <input type="text" id="city" class="form-input" placeholder="مثال: الدار البيضاء، الرباط، مراكش..." required>
-                    </div>
-
-                    <div class="form-summary">
-                        <span>المجموع للدفع عند الاستلام:</span>
-                        <span>199 درهم <small style="color: #A0AEC0; font-size: 0.8rem; text-decoration: line-through;">(285 درهم)</small></span>
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="font-size: 1.3rem; padding: 18px;">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> اضغطي هنا لتأكيد طلبك الآن
-                    </button>
-                    
-                    <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">
-                        <i class="fa-solid fa-lock"></i> معلوماتك سرية ومحمية 100%. بالنقر على الزر سيتم توجيهك لواتساب لتأكيد الطلب فوراً.
-                    </p>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف (واتساب):</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+                    <small style="color: var(--light-text-color);">مثال: 0612345678</small>
+                </div>
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <button type="submit" class="btn">تأكيد الطلب والدفع عند الاستلام</button>
+            </form>
         </div>
     </section>
 
-    <!-- Sticky Bottom CTA for Mobile -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="#order-form" class="btn-primary">
-            <i class="fa-solid fa-cart-shopping"></i> اضغطي هنا للطلب الآن (199 درهم)
-        </a>
-    </div>
+    <!-- زر الشراء العائم (Sticky CTA Button) -->
+    <a href="#checkout-form" class="sticky-cta">
+        اضغطي هنا للطلب الآن
+    </a>
 
-    <!-- JavaScript Logic -->
     <script>
-        // --- 1. Countdown Timer (2 Hours real countdown) ---
-        let totalSeconds = 2 * 60 * 60; // 2 hours in seconds
+        // وظيفة العداد التنازلي
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const hoursElement = document.getElementById('countdown-hours');
+            const minutesElement = document.getElementById('countdown-minutes');
+            const secondsElement = document.getElementById('countdown-seconds');
 
-        function updateCountdown() {
-            const hoursEl = document.getElementById("hours");
-            const minutesEl = document.getElementById("minutes");
-            const secondsEl = document.getElementById("seconds");
+            // ضبط وقت الانتهاء ليكون بعد ساعتين من الآن
+            const endTime = new Date().getTime() + (2 * 60 * 60 * 1000);
 
-            let hours = Math.floor(totalSeconds / 3600);
-            let minutes = Math.floor((totalSeconds % 3600) / 60);
-            let seconds = totalSeconds % 60;
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = endTime - now;
 
-            // Add leading zeros
-            hoursEl.textContent = hours < 10 ? "0" + hours : hours;
-            minutesEl.textContent = minutes < 10 ? "0" + minutes : minutes;
-            secondsEl.textContent = seconds < 10 ? "0" + seconds : seconds;
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "انتهى العرض!";
+                    return;
+                }
 
-            if (totalSeconds > 0) {
-                totalSeconds--;
-            } else {
-                // Optional: Reset timer when it hits 0 to keep scarcity active
-                totalSeconds = 2 * 60 * 60;
-            }
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // تنسيق الأرقام لتكون من رقمين (مثال: 05 بدلاً من 5)
+                hoursElement.textContent = String(hours).padStart(2, '0');
+                minutesElement.textContent = String(minutes).padStart(2, '0');
+                secondsElement.textContent = String(seconds).padStart(2, '0');
+            }, 1000);
         }
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        // وظيفة الأكورديون للأسئلة الشائعة
+        function setupAccordion() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
 
-        // --- 2. Accordion FAQ Logic ---
-        const faqItems = document.querySelectorAll(".faq-item");
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling; // div الإجابة
+                    const icon = question.querySelector('i');
 
-        faqItems.forEach(item => {
-            const question = item.querySelector(".faq-question");
-            const answer = item.querySelector(".faq-answer");
+                    // تبديل الفئة 'active' على السؤال والإجابة
+                    question.classList.toggle('active');
+                    answer.classList.toggle('active');
 
-            question.addEventListener("click", () => {
-                const isActive = item.classList.contains("active");
+                    // ضبط الارتفاع الأقصى للانتقال السلس
+                    if (answer.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0';
+                    }
 
-                // Close all other FAQs
-                faqItems.forEach(otherItem => {
-                    otherItem.classList.remove("active");
-                    otherItem.querySelector(".faq-answer").style.maxHeight = null;
+                    // تدوير الأيقونة
+                    icon.classList.toggle('fa-chevron-up');
+                    icon.classList.toggle('fa-chevron-down');
                 });
-
-                // Toggle current FAQ
-                if (!isActive) {
-                    item.classList.add("active");
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                }
             });
-        });
+        }
 
-        // --- 3. Scroll Reveal Animations (Intersection Observer) ---
-        const revealElements = document.querySelectorAll(".reveal");
+        // وظيفة تأثيرات الظهور عند التمرير (Scroll Reveal)
+        function setupScrollReveal() {
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
 
-        const revealOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                    observer.unobserve(entry.target); // Reveal only once
-                }
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // إيقاف المراقبة بمجرد ظهور العنصر
+                    }
+                });
+            }, {
+                root: null, // مراقبة في إطار عرض المتصفح
+                threshold: 0.1 // عندما يكون 10% من العنصر مرئياً
             });
-        }, revealOptions);
 
-        revealElements.forEach(el => {
-            revealObserver.observe(el);
+            scrollRevealElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // وظيفة إرسال الطلب عبر واتساب
+        function setupWhatsAppForm() {
+            const orderForm = document.getElementById('orderForm');
+
+            orderForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // منع إرسال النموذج الافتراضي
+
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const city = document.getElementById('city').value;
+
+                // التحقق من صحة الإدخالات الأساسية
+                if (!name || !phone || !city) {
+                    alert('الرجاء ملء جميع الحقول المطلوبة.');
+                    return;
+                }
+                 if (!/^[0-9]{10}$/.test(phone)) {
+                    alert('الرجاء إدخال رقم هاتف صحيح مكون من 10 أرقام (مثال: 0612345678).');
+                    return;
+                }
+
+
+                const message = `
+                مرحباً! أود طلب منتج The Ordinary Hyaluronic Acid 2% + B5.
+
+                الاسم: ${name}
+                رقم الهاتف: ${phone}
+                المدينة: ${city}
+
+                طريقة الدفع: الدفع عند الاستلام.
+                `;
+
+                // ترميز الرسالة لـ URL
+                const encodedMessage = encodeURIComponent(message);
+                // رقم الواتساب المطلوب: 212664342688
+                const whatsappURL = `https://wa.me/212664342688?text=${encodedMessage}`;
+
+                // فتح تطبيق واتساب في نافذة جديدة
+                window.open(whatsappURL, '_blank');
+
+                // مسح النموذج بعد الإرسال (اختياري)
+                orderForm.reset();
+            });
+        }
+
+        // تهيئة جميع الوظائف عند تحميل DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            startCountdown();
+            setupAccordion();
+            setupScrollReveal();
+            setupWhatsAppForm();
         });
-
-        // --- 4. Hide Sticky CTA when viewing Form ---
-        const stickyCta = document.getElementById("stickyCta");
-        const checkoutSection = document.getElementById("order-form");
-
-        window.addEventListener("scroll", () => {
-            const checkoutRect = checkoutSection.getBoundingClientRect();
-            // If checkout form is in viewport, hide sticky button so it doesn't block the form submit button
-            if (checkoutRect.top < window.innerHeight && checkoutRect.bottom >= 0) {
-                stickyCta.style.transform = "translateY(100%)";
-            } else {
-                stickyCta.style.transform = "translateY(0)";
-            }
-        });
-
-        // --- 5. WhatsApp Form Submission ---
-        function sendToWhatsapp(event) {
-            event.preventDefault(); // Prevent page reload
-
-            // Get Form Values
-            const fullName = document.getElementById("fullName").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const city = document.getElementById("city").value.trim();
-
-            // Validate inputs
-            if (fullName === "" || phone === "" || city === "") {
-                alert("المرجو ملء جميع الحقول المطلوبة لتأكيد طلبك.");
-                return;
-            }
-
-            // Target Phone Number (Without '+' or '00')
-            const targetPhone = "212664342688";
-
-            // Format WhatsApp Message
-            const message = `*طلب جديد من صفحة الهبوط (The Ordinary 2% + B5)* 🛍️\n\n` +
-                            `*الاسم الكامل:* ${fullName}\n` +
-                            `*رقم الهاتف:* ${phone}\n` +
-                            `*المدينة:* ${city}\n\n` +
-                            `*المنتج:* The Ordinary Hyaluronic Acid 2% + B5\n` +
-                            `*السعر:* 199 درهم (شحن مجاني + خصم 30%)\n` +
-                            `*طريقة الدفع:* الدفع عند الاستلام (COD)`;
-
-            // Encode message for URL
-            const encodedMessage = encodeURIComponent(message);
-
-            // Generate WhatsApp URL
-            const
+    </script>
+</body>
+</html>
