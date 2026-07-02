@@ -3,417 +3,1127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ترطيب عميق مع The Ordinary</title>
+    <title>The Ordinary Hyaluronic Acid 2% + B5 | ترطيب عميق لبشرتك</title>
+    
+    <!-- Google Fonts - Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        /* --- CSS Reset & Variables --- */
         :root {
-            --primary: #f1f5f9;
-            --secondary: #334155;
-            --accent: #3b82f6;
-            --success: #25d366; /* WhatsApp Green */
-            --white: #ffffff;
-            --font-family: 'Poppins', sans-serif;
+            --primary: #1A2530;
+            --accent: #2B6CB0;
+            --accent-hover: #2C5282;
+            --cta-color: #27AE60;
+            --cta-hover: #219653;
+            --bg-light: #F7FAFC;
+            --text-dark: #2D3748;
+            --text-muted: #718096;
+            --border-color: #E2E8F0;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-3d: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
 
         body {
-            margin: 0;
-            font-family: var(--font-family), sans-serif;
-            background-color: var(--primary);
-            color: var(--secondary);
-            direction: rtl;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 70px; /* Space for sticky button */
         }
 
-        section {
-            padding: 80px 20px;
+        /* --- Scroll Reveal Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- General Utilities --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cta-color), var(--cta-hover));
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-primary i {
+            margin-left: 10px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            padding: 60px 0 40px;
+            background: radial-gradient(circle at top right, #EBF8FF 0%, #F7FAFC 70%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .badge-discount {
+            display: inline-block;
+            background: #FEB2B2;
+            color: #9B2C2C;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        .stars-rating {
+            color: #F6AD55;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stars-rating span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-right: 8px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .hero-price {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .current-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--cta-color);
+        }
+
+        .old-price {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #BEE3F8, #E2E8F0);
+            border-radius: 50%;
+            z-index: 1;
+            filter: blur(30px);
+            opacity: 0.7;
+        }
+
+        .hero-img {
+            max-width: 85%;
+            height: auto;
+            z-index: 2;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+            transition: transform 0.5s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.03) rotate(-2deg);
+        }
+
+        /* --- Trust Badges Bar --- */
+        .trust-bar {
+            background: white;
+            padding: 25px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             text-align: center;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1, h2 {
-            margin: 0;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #64748b;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: var(--accent);
-            color: var(--white);
-            font-size: 1.2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 12px rgba(59, 130, 246, 0.4);
-        }
-
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-        }
-
-        #hero {
-            position: relative;
-            z-index: 1;
-            padding-top: 120px;
-        }
-
-        #hero-product {
-            perspective: 1000px;
-            margin: 60px auto;
-        }
-
-        #hero-image {
-            width: 300px;
-            animation: float 4s ease-in-out infinite;
-            transform-style: preserve-3d;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-
-        @keyframes float {
-            0% { transform: translateZ(0px) rotateX(0deg); }
-            50% { transform: translateZ(50px) rotateX(5deg); }
-            100% { transform: translateZ(0px) rotateX(0deg); }
-        }
-
-        #benefits {
-            background-color: var(--white);
-            padding-top: 100px;
-        }
-
-        .benefit-cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background-color: #f8fafc;
-            border-radius: 20px;
-            padding: 40px;
-            width: calc(33% - 20px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.02);
-        }
-
-        .card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        #how-to-use {
-            background-color: #f8fafc;
-        }
-
-        .steps {
+        .trust-item {
             display: flex;
             flex-direction: column;
-            gap: 20px;
             align-items: center;
-        }
-
-        .step-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            text-align: right;
-            width: 100%;
-            max-width: 800px;
-            border-radius: 15px;
-            border: 1px solid rgba(0,0,0,0.05);
-            padding: 15px;
-            background-color: var(--white);
-        }
-
-        .step-number {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--accent);
-        }
-
-        /* 3D Checkout Order Form */
-        #checkout {
-            background-color: var(--white);
-            padding: 100px 20px;
-        }
-
-        .form-3d-box {
-            background: #f8fafc;
-            max-width: 550px;
-            margin: 0 auto;
-            padding: 40px 30px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,1);
-            transform: perspective(1000px) rotateX(2deg);
-            transition: transform 0.3s ease;
-        }
-
-        .form-3d-box:hover {
-            transform: perspective(1000px) rotateX(0deg) translateY(-5px);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.08);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            text-align: right;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--secondary);
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            background-color: var(--white);
-            box-sizing: border-box;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-        }
-
-        .submit-whatsapp-btn {
-            width: 100%;
-            padding: 18px;
-            background-color: var(--success);
-            color: var(--white);
-            font-size: 1.3rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 10px;
         }
 
-        .submit-whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+        @media (min-width: 768px) {
+            .trust-item {
+                flex-direction: row;
+                justify-content: center;
+            }
         }
 
-        footer {
-            background-color: var(--secondary);
-            color: #94a3b8;
-            padding: 40px 20px;
+        .trust-icon {
+            width: 50px;
+            height: 50px;
+            background: #EBF8FF;
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .trust-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .trust-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Urgency & Scarcity Section --- */
+        .urgency-section {
+            padding: 40px 0;
+            background: linear-gradient(135deg, #FFF5F5, #FED7D7);
+            margin: 40px 0;
+        }
+
+        .urgency-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
             text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
         }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.3rem; }
-            .benefit-cards .card { width: 100%; }
-            .step-item { flex-direction: column; text-align: center; }
+        .urgency-title {
+            color: #C53030;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            direction: ltr;
+        }
+
+        .time-box {
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            min-width: 70px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .time-box small {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #A0AEC0;
+        }
+
+        .stock-progress {
+            background: #E2E8F0;
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .stock-bar {
+            background: linear-gradient(90deg, #E53E3E, #DD6B20);
+            width: 15%; /* Reflects low stock */
+            height: 100%;
+            border-radius: 10px;
+            animation: strip 2s linear infinite;
+        }
+
+        .stock-text {
+            font-weight: 700;
+            color: #C53030;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        /* --- Benefits Section (3D Hover) --- */
+        .benefits {
+            padding: 60px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: var(--shadow-3d);
+            border-color: var(--accent);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: #EBF8FF;
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
+            background: var(--accent);
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- How to Use Section --- */
+        .how-to-use {
+            padding: 60px 0;
+            background: white;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin: 0 auto 15px;
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- Social Proof / Reviews --- */
+        .reviews {
+            padding: 60px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #CBD5E0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .avatar-1 { background: #E53E3E; }
+        .avatar-2 { background: #319795; }
+        .avatar-3 { background: #805AD5; }
+
+        .reviewer-info h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        .reviewer-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .review-stars {
+            color: #F6AD55;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--cta-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* --- FAQ Section --- */
+        .faq {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #F7FAFC;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--accent);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Checkout Section (Form) --- */
+        .checkout {
+            padding: 60px 0 80px;
+            background: linear-gradient(135deg, #EBF8FF, #F7FAFC);
+        }
+
+        .checkout-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-3d);
+            border: 2px solid var(--accent);
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .checkout-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .checkout-header p {
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+            background: #F8FAFC;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+        }
+
+        .form-summary {
+            background: #EDF2F7;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .form-summary span:last-child {
+            color: var(--cta-color);
+            font-size: 1.3rem;
+        }
+
+        /* --- Sticky CTA Button --- */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-cta .btn-primary {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            max-width: 400px;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.8rem; }
+            .current-price { font-size: 1.8rem; }
+            .time-box span { font-size: 1.4rem; }
+            .time-box { min-width: 55px; padding: 8px; }
+            .checkout-card { padding: 25px 15px; }
         }
     </style>
 </head>
 <body>
 
-    <canvas id="particle-canvas"></canvas>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <div class="badge-discount">🔥 خصم حصري 30% لفترة محدودة</div>
+                <h1 class="hero-title">سر البشرة المفعمة بالترطيب والنضارة الفورية</h1>
+                
+                <div class="stars-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span>(4.9/5 من طرف +1,200 عميلة في المغرب)</span>
+                </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>ترطيب عميق وبشرة ممتلئة وناعمة</h1>
-            <p>اكتشفي قوة حمض الهيالورونيك 2% + B5 من <span style="font-weight: 600;">The Ordinary</span>. تركيبة متطورة لترطيب يعيد لبشرتك النضارة.</p>
-            <div id="hero-product">
-                <img src="the-ordinary-hyaluronic-acid-2-b5_769915233490_DarBeauty.webp" alt="The Ordinary Hyaluronic Acid" id="hero-image">
+                <p class="hero-desc">
+                    سيروم <strong>The Ordinary Hyaluronic Acid 2% + B5</strong> الأصلي. تركيبة متطورة تجمع بين حمض الهيالورونيك بـ 3 أحجام جزيئية وفيتامين B5 لتغلغل عميق، ترطيب فائق يدوم 24 ساعة، وملء الخطوط الرفيعة من الأسبوع الأول للاستخدام.
+                </p>
+
+                <div class="hero-price">
+                    <span class="current-price">199 درهم</span>
+                    <span class="old-price">285 درهم</span>
+                </div>
+
+                <a href="#order-form" class="btn-primary">
+                    <i class="fa-solid fa-cart-shopping"></i> اطلبي الآن بخصم 30% - الدفع عند الاستلام
+                </a>
             </div>
-            <a href="#checkout" class="cta-button">اطلبي الآن عبر واتساب</a>
-        </div>
-    </section>
 
-    <section id="benefits">
-        <div class="container">
-            <h2>أهم الفوائد لبشرتك</h2>
-            <div class="benefit-cards">
-                <div class="card">
-                    <h3>ترطيب فائق</h3>
-                    <p>يجمع بين ثلاثة أوزان جزيئية من حمض الهيالورونيك للتغلغل في أعماق طبقات الجلد المختلفة.</p>
-                </div>
-                <div class="card">
-                    <h3>بشرة ممتلئة ونضرة</h3>
-                    <p>يساعد على استعادة حجم وامبلاء الجلد، لتقليل مظهر الخطوط الجافة الدقيقة فوراً.</p>
-                </div>
-                <div class="card">
-                    <h3>دعم فيتامين B5</h3>
-                    <p>يعمل فيتامين B5 على تهدئة البشرة الحساسة وتعزيز احتفاظ الخلايا بالرطوبة الدائمة.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-to-use">
-        <div class="container">
-            <h2>طريقة الاستخدام لنتائج مثالية</h2>
-            <div class="steps">
-                <div class="step-item">
-                    <span class="step-number">01</span>
-                    <div class="step-text">
-                        <h4>تنظيف الوجه</h4>
-                        <p>ابدأي بغسل وتجفيف وجهك بلطف من الشوائب والمكياج.</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <span class="step-number">02</span>
-                    <div class="step-text">
-                        <h4>وضع القطرات</h4>
-                        <p>ضعي قطرات قليلة من السيروم على بشرة رطبة قليلاً ودلكيها بالتساوي.</p>
-                    </div>
-                </div>
+            <div class="hero-image-wrapper reveal">
+                <!-- Using the exact image URL specified in prompt -->
+                <img src="the-ordinary-hyaluronic-acid-2-b5_769915233490_DarBeauty.webp" alt="The Ordinary Hyaluronic Acid 2% + B5 Serum" class="hero-img">
             </div>
         </div>
     </section>
 
-    <!-- 3D Checkout Section -->
-    <section id="checkout">
+    <!-- Trust Badges Bar -->
+    <section class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="trust-text">
+                    <h4>شحن مجاني وسريع</h4>
+                    <p>توصيل لجميع المدن خلال 24-48 ساعة</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <div class="trust-text">
+                    <h4>الدفع عند الاستلام</h4>
+                    <p>لا تدفعي أي شيء حتى تتوصلين بطلبك</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="trust-text">
+                    <h4>منتج أصلي 100%</h4>
+                    <p>مضمون ومستورد مباشرة من كندا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency & Scarcity Section -->
+    <section class="urgency-section reveal">
         <div class="container">
-            <h2>نموذج الطلب السريع (الدفع عند الاستلام)</h2>
-            <p>يرجى ملء المعلومات التالية وسيتم توجيهك مباشرة لتأكيد طلبك عبر الواتساب</p>
-            
-            <div class="form-3d-box">
-                <form id="orderForm">
-                    <div class="form-group">
-                        <label for="name">الإسم الكامل:</label>
-                        <input type="text" id="name" placeholder="مثال: محمد العلمي" required>
+            <div class="urgency-box">
+                <h3 class="urgency-title"><i class="fa-solid fa-stopwatch"></i> ينتهي هذا العرض الحصري بعد:</h3>
+                <div class="countdown" id="countdown">
+                    <div class="time-box"><span id="hours">01</span><small>ساعات</small></div>
+                    <div class="time-box"><span id="minutes">59</span><small>دقائق</small></div>
+                    <div class="time-box"><span id="seconds">59</span><small>ثواني</small></div>
+                </div>
+                <div class="stock-progress">
+                    <div class="stock-bar"></div>
+                </div>
+                <p class="stock-text"><i class="fa-solid fa-fire"></i> تنبيه: المخزون المتبقي 12 عبوة فقط بهذا السعر!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits container">
+        <h2 class="section-title reveal">لماذا يحتاج وجهك لهذا السيروم؟</h2>
+        <p class="section-subtitle reveal">تركيبة علمية مثبتة سريرياً لإعادة الشباب والحيوية لبشرتك</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-droplet"></i></div>
+                <h3>ترطيب عميق ومتعدد الطبقات</h3>
+                <p>يحتوي على 3 أوزان جزيئية من حمض الهيالورونيك (منخفض، متوسط، مرتفع) لضمان وصول الترطيب لأعمق طبقات الجلد وليس فقط السطح.</p>
+            </div>
+
+            <div class="benefit-card reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>ملء التجاعيد والخطوط الرفيعة</h3>
+                <p>يعمل على شد البشرة ومنحها مظهراً ممتلئاً (Plumping Effect)، مما يخفي علامات التعب والتقدم في السن بشكل ملحوظ وسريع.</p>
+            </div>
+
+            <div class="benefit-card reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <h3>دعم وحماية حاجز البشرة</h3>
+                <p>معزز بفيتامين B5 (الباثينول) الذي يساعد على ترميم حاجز البشرة الطبيعي، تهدئة الالتهابات، وحبس الرطوبة لفترات طويلة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use">
+        <div class="container">
+            <h2 class="section-title reveal">طريقة الاستخدام الصحيحة</h2>
+            <p class="section-subtitle reveal">3 خطوات بسيطة الروتينك اليومي للحصول على أفضل النتائج</p>
+
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <div class="step-number">1</div>
+                    <h3>تنظيف وترطيب الوجه</h3>
+                    <p>اغسلي وجهك بالغسول المناسب، والأهم: اتركي بشرتك مبللة قليلاً بالماء (غير جافة تماماً) لأن الهيالورونيك يحتاج لرطوبة ليمتصها.</p>
+                </div>
+
+                <div class="step-card reveal">
+                    <div class="step-number">2</div>
+                    <h3>تطبيق بضع قطرات</h3>
+                    <p>ضعي 3 إلى 4 قطرات من السيروم على وجهك ورقبتك صباحاً ومساءً، وقومي بتوزيعه بحركات ربط لطيفة حتى يتم امتصاصه.</p>
+                </div>
+
+                <div class="step-card reveal">
+                    <div class="step-number">3</div>
+                    <h3>قفل الترطيب بالكريم</h3>
+                    <p>بعد دقيقة من وضع السيروم، ضعي كريم الترطيب المعتاد (Moisturizer) لقفل الرطوبة داخل خلايا البشرة وحمايتها.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Reviews -->
+    <section class="reviews container">
+        <h2 class="section-title reveal">تجارب عميلاتنا في المغرب</h2>
+        <p class="section-subtitle reveal">نتائج حقيقية لنساء استخدمن سيروم The Ordinary الأصلي</p>
+
+        <div class="reviews-grid">
+            <div class="review-card reveal">
+                <div>
+                    <div class="review-header">
+                        <div class="avatar avatar-1">س</div>
+                        <div class="reviewer-info">
+                            <h4>سارة بنسودة</h4>
+                            <span>الدار البيضاء</span>
+                        </div>
                     </div>
-                    
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"منتج رائع بزاف! بشرتي كانت جافة ومقشرة، من الأسبوع الأول ديال الاستعمال حسيت بفرق كبير. ولات رطبة ومشرقة ومجبدة. التوصيل كان سريع في كازا والتعامل جد احترافي."</p>
+                </div>
+                <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> مشترية مؤكدة</div>
+            </div>
+
+            <div class="review-card reveal">
+                <div>
+                    <div class="review-header">
+                        <div class="avatar avatar-2">ف</div>
+                        <div class="reviewer-info">
+                            <h4>فاطمة الزهراء العلوي</h4>
+                            <span>الرباط</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"كنت خايفة نشريه ويكون مزور حيت كينين بزاف ديال الكوبي، ولكن الحمد لله هذا الأصلي 100% (تأكدت من الباركود والتكستور). النتيجة كتحمق، الخطوط لي تحت عيني نقصو بزاف."</p>
+                </div>
+                <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> مشترية مؤكدة</div>
+            </div>
+
+            <div class="review-card reveal">
+                <div>
+                    <div class="review-header">
+                        <div class="avatar avatar-3">م</div>
+                        <div class="reviewer-info">
+                            <h4>مريم الناصري</h4>
+                            <span>مراكش</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"أحسن سيروم جربتو لترطيب الوجه بدون منازع. كيشربو الجلد دغيا ومكيخليش أثر دهني. شكراً لكم على الشحن المجاني، وصلني لباب الدار ومخلصت حتى راقبت المنتوج ديالي."</p>
+                </div>
+                <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> مشترية مؤكدة</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title reveal">الأسئلة الشائعة</h2>
+            <p class="section-subtitle reveal">كل ما تحتاجين معرفته حول الطلب والمنتج</p>
+
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>كيف تتم عملية الدفع واستلام الطلب؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نحن نعتمد نظام "الدفع عند الاستلام" (Cash on Delivery) لضمان راحتك وأمانك. لا تدفعي أي مبلغ مسبقاً؛ بعد تعبئة نموذج الطلب، سيتصل بك فريقنا لتأكيد العنوان، وسيجلب لك الموزع الطلب حتى باب منزلك، حينها فقط تدفعين ثمن المنتج.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>كم يستغرق التوصيل إلى مدينتي؟ ومن يدفع مصاريف الشحن؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>التوصيل سريع ويستغرق عادة ما بين 24 إلى 48 ساعة لجميع المدن المغربية الكبرى، وقد يستغرق 72 ساعة للمناطق البعيدة. أما بالنسبة لمصاريف الشحن، فهي مجانية 100% لفترة محدودة ضمن هذا العرض.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>هل المنتج أصلي؟ وكيف يمكنني التأكد من ذلك؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نضمن لك أن جميع منتجاتنا أصلية 100% ومستوردة مباشرة من الموزعين المعتمدين لعلامة The Ordinary (كندا). يمكنك فحص العبوة والرمز الشريطي (Barcode) وقوام المنتج عند الاستلام قبل دفع أي شيء للموزع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Form Section -->
+    <section class="checkout" id="order-form">
+        <div class="container">
+            <div class="checkout-card reveal">
+                <div class="checkout-header">
+                    <h3>أدخلي معلوماتك للطلب الآن</h3>
+                    <p>استفيدي من الخصم 30% + الشحن المجاني (الدفع عند الاستلام)</p>
+                </div>
+
+                <form id="whatsappForm" onsubmit="sendToWhatsapp(event)">
                     <div class="form-group">
-                        <label for="phone">رقم الهاتف:</label>
-                        <input type="tel" id="phone" placeholder="مثال: 0612345678" required>
+                        <label class="form-label" for="fullName"><i class="fa-solid fa-user"></i> الاسم الكامل *</label>
+                        <input type="text" id="fullName" class="form-input" placeholder="مثال: سارة العلوي" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="city">المدينة:</label>
-                        <input type="text" id="city" placeholder="مثال: الدار البيضاء، الرباط..." required>
+                        <label class="form-label" for="phone"><i class="fa-solid fa-phone"></i> رقم الهاتف *</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="مثال: 0612345678" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="quantity">الكمية المطلوبة:</label>
-                        <select id="quantity">
-                            <option value="1">عبوة واحدة (1) - بسعر العرض</option>
-                            <option value="2">عبوتين (2) - عرض خاص + شحن مجاني</option>
-                            <option value="3">3 عبوات (3) - أفضل توفير</option>
-                        </select>
+                        <label class="form-label" for="city"><i class="fa-solid fa-location-dot"></i> المدينة *</label>
+                        <input type="text" id="city" class="form-input" placeholder="مثال: الدار البيضاء، الرباط، مراكش..." required>
                     </div>
 
-                    <button type="submit" class="submit-whatsapp-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.713-1.458L0 24zm6.59-3.922c1.615.959 3.197 1.463 4.883 1.465 5.466 0 9.912-4.417 9.915-9.855.001-2.634-1.021-5.11-2.88-6.973-1.857-1.863-4.329-2.889-6.963-2.89-5.47 0-9.918 4.419-9.921 9.857-.002 1.83.491 3.614 1.428 5.182l-.1 1.588.94-.308z"/></svg>
-                        تأكيد الطلب عبر واتساب
+                    <div class="form-summary">
+                        <span>المجموع للدفع عند الاستلام:</span>
+                        <span>199 درهم <small style="color: #A0AEC0; font-size: 0.8rem; text-decoration: line-through;">(285 درهم)</small></span>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="font-size: 1.3rem; padding: 18px;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> اضغطي هنا لتأكيد طلبك الآن
                     </button>
+                    
+                    <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">
+                        <i class="fa-solid fa-lock"></i> معلوماتك سرية ومحمية 100%. بالنقر على الزر سيتم توجيهك لواتساب لتأكيد الطلب فوراً.
+                    </p>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 The Ordinary. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+    <!-- Sticky Bottom CTA for Mobile -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="#order-form" class="btn-primary">
+            <i class="fa-solid fa-cart-shopping"></i> اضغطي هنا للطلب الآن (199 درهم)
+        </a>
+    </div>
 
+    <!-- JavaScript Logic -->
     <script>
-        // Form Logic to send data directly to your WhatsApp number
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get data from form inputs
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const city = document.getElementById('city').value;
-            const quantity = document.getElementById('quantity').value;
-            
-            // Destination number
-            const whatsappNumber = "212664342688"; 
-            
-            // Message generation
-            const message = `السلام عليكم ورحمة الله، أود تأكيد طلبي من صفحة الهبوط:%0A%0A` +
-                            `🛍️ *المنتج:* The Ordinary Hyaluronic Acid%0A` +
-                            `👤 *الإسم:* ${encodeURIComponent(name)}%0A` +
-                            `📞 *الهاتف:* ${encodeURIComponent(phone)}%0A` +
-                            `📍 *المدينة:* ${encodeURIComponent(city)}%0A` +
-                            `📦 *الكمية:* ${encodeURIComponent(quantity)} عبوة`;
-            
-            // Open WhatsApp link
-            window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`, '_blank');
+        // --- 1. Countdown Timer (2 Hours real countdown) ---
+        let totalSeconds = 2 * 60 * 60; // 2 hours in seconds
+
+        function updateCountdown() {
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+
+            let hours = Math.floor(totalSeconds / 3600);
+            let minutes = Math.floor((totalSeconds % 3600) / 60);
+            let seconds = totalSeconds % 60;
+
+            // Add leading zeros
+            hoursEl.textContent = hours < 10 ? "0" + hours : hours;
+            minutesEl.textContent = minutes < 10 ? "0" + minutes : minutes;
+            secondsEl.textContent = seconds < 10 ? "0" + seconds : seconds;
+
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            } else {
+                // Optional: Reset timer when it hits 0 to keep scarcity active
+                totalSeconds = 2 * 60 * 60;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // --- 2. Accordion FAQ Logic ---
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+
+            question.addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+
+                // Close all other FAQs
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove("active");
+                    otherItem.querySelector(".faq-answer").style.maxHeight = null;
+                });
+
+                // Toggle current FAQ
+                if (!isActive) {
+                    item.classList.add("active");
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
         });
 
-        // Background Particles
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let particlesArray = [];
-        class Particle {
-            constructor(x, y, directionX, directionY, size, color) {
-                this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color;
+        // --- 3. Scroll Reveal Animations (Intersection Observer) ---
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target); // Reveal only once
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // --- 4. Hide Sticky CTA when viewing Form ---
+        const stickyCta = document.getElementById("stickyCta");
+        const checkoutSection = document.getElementById("order-form");
+
+        window.addEventListener("scroll", () => {
+            const checkoutRect = checkoutSection.getBoundingClientRect();
+            // If checkout form is in viewport, hide sticky button so it doesn't block the form submit button
+            if (checkoutRect.top < window.innerHeight && checkoutRect.bottom >= 0) {
+                stickyCta.style.transform = "translateY(100%)";
+            } else {
+                stickyCta.style.transform = "translateY(0)";
             }
-            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill(); }
-            update() {
-                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
-                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-                this.x += this.directionX; this.y += this.directionY; this.draw();
+        });
+
+        // --- 5. WhatsApp Form Submission ---
+        function sendToWhatsapp(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Get Form Values
+            const fullName = document.getElementById("fullName").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const city = document.getElementById("city").value.trim();
+
+            // Validate inputs
+            if (fullName === "" || phone === "" || city === "") {
+                alert("المرجو ملء جميع الحقول المطلوبة لتأكيد طلبك.");
+                return;
             }
-        }
-        function init() {
-            for (let i = 0; i < 50; i++) {
-                let size = (Math.random() * 4) + 1;
-                let x = Math.random() * innerWidth; let y = Math.random() * innerHeight;
-                let directionX = (Math.random() * 1) - 0.5; let directionY = (Math.random() * 1) - 0.5;
-                particlesArray.push(new Particle(x, y, directionX, directionY, size, 'rgba(59, 130, 246, 0.3)'));
-            }
-        }
-        function animate() { ctx.clearRect(0, 0, innerWidth, innerHeight); particlesArray.forEach(p => p.update()); requestAnimationFrame(animate); }
-        init(); animate();
-    </script>
-</body>
-</html>
+
+            // Target Phone Number (Without '+' or '00')
+            const targetPhone = "212664342688";
+
+            // Format WhatsApp Message
+            const message = `*طلب جديد من صفحة الهبوط (The Ordinary 2% + B5)* 🛍️\n\n` +
+                            `*الاسم الكامل:* ${fullName}\n` +
+                            `*رقم الهاتف:* ${phone}\n` +
+                            `*المدينة:* ${city}\n\n` +
+                            `*المنتج:* The Ordinary Hyaluronic Acid 2% + B5\n` +
+                            `*السعر:* 199 درهم (شحن مجاني + خصم 30%)\n` +
+                            `*طريقة الدفع:* الدفع عند الاستلام (COD)`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Generate WhatsApp URL
+            const
